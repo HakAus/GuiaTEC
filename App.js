@@ -66,6 +66,7 @@ const administrativeProcessesSelectionPage = function () {
           textAlign: "center",
           color: "#ffffff",
         }}
+        arrowColor="#ffffff"
       />
     </ScrollView>
   );
