@@ -13,35 +13,59 @@ const administrativeProcessesSelectionPage = function () {
       <DropDownPicker
         items={[
           {
-            label: "USA",
-            value: "usa",
-            icon: () => <Icon name="flag" size={18} color="#900" />,
+            label: "Becas",
+            value: "becas",
+            icon: () => (
+              <Icon name="arrow-right-circle" size={18} color="#dc4649" />
+            ),
           },
           {
-            label: "UK",
-            value: "uk",
-            icon: () => <Icon name="flag" size={18} color="#900" />,
+            label: "Inclusión",
+            value: "inclu",
+            icon: () => (
+              <Icon name="arrow-right-circle" size={18} color="#dc4649" />
+            ),
           },
           {
-            label: "France",
-            value: "france",
-            icon: () => <Icon name="flag" size={18} color="#900" />,
+            label: "Reconocimiento de materias",
+            value: "recon",
+            icon: () => (
+              <Icon name="arrow-right-circle" size={18} color="#dc4649" />
+            ),
           },
         ]}
-        defaultValue={"usa"}
-        containerStyle={{ height: 40, marginLeft: 50, marginRight: 50 }}
-        style={{ backgroundColor: "#fafafa" }}
+        containerStyle={{
+          height: 40,
+          marginLeft: 50,
+          marginRight: 50,
+          color: "#133982",
+        }}
+        style={{
+          backgroundColor: "#133982",
+          borderTopLeftRadius: 20,
+          borderTopRightRadius: 20,
+          borderBottomLeftRadius: 10,
+          borderBottomRightRadius: 10,
+        }}
         itemStyle={{
           justifyContent: "flex-start",
         }}
         dropDownStyle={{
           backgroundColor: "#fafafa",
+          borderBottomLeftRadius: 20,
+          borderBottomRightRadius: 20,
         }}
         onChangeItem={(item) =>
           this.setState({
             country: item.value,
           })
         }
+        placeholder="Seleccione una categoría"
+        placeholderStyle={{
+          fontWeight: "bold",
+          textAlign: "center",
+          color: "#ffffff",
+        }}
       />
     </ScrollView>
   );
