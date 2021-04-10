@@ -1,93 +1,35 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, ScrollView, View } from "react-native";
-import DropDownPicker from "react-native-dropdown-picker";
-import Icon from "react-native-vector-icons/Feather";
+import { StyleSheet, Text, ScrollView, View, FlatList } from "react-native";
+import DropDownList from "./components/DropDownList";
 
 const administrativeProcessesSelectionPage = function () {
   return (
-    <ScrollView>
-      <View style={styles.container}>
-        <Text style={styles.sectionText}>Procesos administrativos</Text>
-      </View>
-      <DropDownPicker
-        items={[
-          {
-            label: "Becas",
-            value: "becas",
-            icon: () => (
-              <Icon name="arrow-right-circle" size={18} color="#dc4649" />
-            ),
-          },
-          {
-            label: "Inclusión",
-            value: "inclu",
-            icon: () => (
-              <Icon name="arrow-right-circle" size={18} color="#dc4649" />
-            ),
-          },
-          {
-            label: "Reconocimiento de materias",
-            value: "recon",
-            icon: () => (
-              <Icon name="arrow-right-circle" size={18} color="#dc4649" />
-            ),
-          },
-        ]}
-        containerStyle={{
-          height: 40,
-          marginLeft: 50,
-          marginRight: 50,
-          color: "#133982",
-        }}
-        style={{
-          backgroundColor: "#133982",
-          borderTopLeftRadius: 20,
-          borderTopRightRadius: 20,
-          borderBottomLeftRadius: 10,
-          borderBottomRightRadius: 10,
-        }}
-        itemStyle={{
-          justifyContent: "flex-start",
-        }}
-        dropDownStyle={{
-          backgroundColor: "#fafafa",
-          borderBottomLeftRadius: 20,
-          borderBottomRightRadius: 20,
-        }}
-        onChangeItem={(item) =>
-          this.setState({
-            country: item.value,
-          })
-        }
-        placeholder="Seleccione una categoría"
-        placeholderStyle={{
-          fontWeight: "bold",
-          textAlign: "center",
-          color: "#ffffff",
-        }}
-        arrowColor="#ffffff"
-      />
+    <ScrollView style={styles.scrollView}>
+      <Text style={styles.sectionText}> Procesos administrativos </Text>
+      <DropDownList />
+      <View style={{ width: 200, height: 200 }}></View>
     </ScrollView>
   );
 };
+
 export default function App() {
-  console.log(typeof "dfd");
   return administrativeProcessesSelectionPage();
 }
 
 const styles = StyleSheet.create({
-  container: {
+  scrollView: {
     flex: 1,
     backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
   },
   sectionText: {
-    padding: 20,
-    fontSize: 40,
-    fontFamily: "",
+    flex: 1,
+    marginTop: "15%",
+    marginBottom: "10%",
+    marginHorizontal: "5%",
+    textAlign: "center",
+    fontSize: 30,
     fontWeight: "normal",
-    color: "000000",
+    color: "#000000",
   },
 });
