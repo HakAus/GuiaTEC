@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View, Text, ImageBackground } from "react-native";
-import Card from "../components/Card";
+import TouchableCard from "../components/TouchableCard";
 
 export default function AdminProcessesMenu({ navigation }) {
   const goToBecas = () => {
@@ -19,16 +19,19 @@ export default function AdminProcessesMenu({ navigation }) {
       style={styles.background}
     >
       <View style={styles.view}>
-        <Text style={styles.sectionText}> Pasos para el proceso de beca </Text>
-        <Card pressHandler={goToBecas} style={styles.redButton}>
+        <Text style={styles.sectionText}> Procesos Administrativos </Text>
+        <TouchableCard pressHandler={goToBecas} style={styles.redButton}>
           <Text style={styles.cardTitle}>Becas</Text>
-        </Card>
-        <Card pressHandler={goToInclusion} style={styles.redButton}>
+        </TouchableCard>
+        <TouchableCard pressHandler={goToInclusion} style={styles.redButton}>
           <Text style={styles.cardTitle}>Inclusión</Text>
-        </Card>
-        <Card pressHandler={goToReconocimiento} style={styles.redButton}>
+        </TouchableCard>
+        <TouchableCard
+          pressHandler={goToReconocimiento}
+          style={styles.redButton}
+        >
           <Text style={styles.cardTitle}>Reconocimiento de materias</Text>
-        </Card>
+        </TouchableCard>
         <View style={{ width: 200, height: 200 }}></View>
       </View>
     </ImageBackground>
