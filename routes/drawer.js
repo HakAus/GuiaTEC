@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import ContactsStack from "./contactsStack";
 import AdminProcessesStack from "./adminStack";
+import ScheduleStack from "./ScheduleStack"
 
 const DrawerNavigator = () => {
   const { Navigator, Screen } = createDrawerNavigator();
@@ -13,6 +14,11 @@ const DrawerNavigator = () => {
         <Screen
           name="Procesos Administrativos"
           component={AdminProcessesStack}
+        />
+        <Screen
+          name="Horarios de buses"
+          component={ScheduleStack}
+          
         />
       </Navigator>
     </NavigationContainer>
