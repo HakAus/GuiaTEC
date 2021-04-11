@@ -1,35 +1,20 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, ScrollView, View, FlatList } from "react-native";
-import DropDownList from "./components/DropDownList";
-
-const administrativeProcessesSelectionPage = function () {
-  return (
-    <ScrollView style={styles.scrollView}>
-      <Text style={styles.sectionText}> Procesos administrativos </Text>
-      <DropDownList />
-      <View style={{ width: 200, height: 200 }}></View>
-    </ScrollView>
-  );
-};
+import AppLoading from "expo-app-loading";
+import {
+  useFonts,
+  Nunito_400Regular,
+  Nunito_700Bold,
+} from "@expo-google-fonts/nunito";
+import DrawerNavigator from "./routes/drawer";
 
 export default function App() {
-  return administrativeProcessesSelectionPage();
+  let [fontsLoaded] = useFonts({
+    Nunito_400Regular,
+    Nunito_700Bold,
+  });
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  } else {
+    return <DrawerNavigator />;
+  }
 }
-
-const styles = StyleSheet.create({
-  scrollView: {
-    flex: 1,
-    backgroundColor: "#fff",
-  },
-  sectionText: {
-    flex: 1,
-    marginTop: "15%",
-    marginBottom: "10%",
-    marginHorizontal: "5%",
-    textAlign: "center",
-    fontSize: 30,
-    fontWeight: "normal",
-    color: "#000000",
-  },
-});
