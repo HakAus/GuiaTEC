@@ -2,6 +2,7 @@ import React from "react";
 import { Image } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Contacts from "../screens/contactScreen";
+import Header from "../components/Header";
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -20,11 +21,12 @@ const ContactsStack = ({ navigation }) => (
       name="Contacts"
       component={Contacts}
       options={{
-        title: "Contacts",
-        // headerTitle: () => <Header navigation={navigation} title="Contacts" />,
+        headerTitle: () => (
+          <Header navigation={navigation} title="Información de contacto" />
+        ),
         headerBackground: () => (
           <Image
-            source={require("../assets/blue_bg.jpg")}
+            source={require("../assets/blue_bg.png")}
             style={{ width: "100%", height: "100%" }}
           />
         ),

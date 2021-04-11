@@ -34,6 +34,10 @@ const styles = StyleSheet.create({
   childrenContainer: {
     flex: 1,
   },
+  activeItem: {
+    flex: 1,
+    backgroundColor: "red",
+  },
 });
 
 export default styles;
