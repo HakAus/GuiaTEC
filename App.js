@@ -1,122 +1,97 @@
 import React from "react";
-import { Text, View, StyleSheet, TouchableOpacity, Alert, Button } from 'react-native'
+import { Text, View, StyleSheet, TouchableOpacity, Alert, Button, ScrollView } from 'react-native'
 import { NavigationContainer } from "@react-navigation/native"
 import { createStackNavigator } from "@react-navigation/stack"
+import {
+  useFonts,
+  Nunito_400Regular,
+  Nunito_700Bold,
+
+
+
+} from "@expo-google-fonts/nunito"
+
+
+
+
 
 function HomeScreen({ navigation }) {
   return (
-<View style={styles.container}>
-      <Text style={styles.title}>GuiaTEC</Text>
+    <ScrollView >
+    <View style={styles.container}>
+      
+      <Text style={styles.title}>Menu Principal</Text>
 
       <TouchableOpacity
-        //color="#002855"
-        //title="Procesos administrativos"
-        onPress={() => Alert.alert('Hello')}
+        //onPress={() => Alert.alert('Hello')}
         style={styles.button}
-
       >
         <Text style={styles.buttontext} >Procesos administrativos</Text>
-
       </TouchableOpacity>
-
-
       <TouchableOpacity
-        //color="#002855"
-        //title="Procesos administrativos"
-        onPress={() => Alert.alert('Hello')}
+        //onPress={() => Alert.alert('Hello')}
         style={styles.button}
-
       >
         <Text style={styles.buttontext} >Horario de buses </Text>
-
       </TouchableOpacity>
-
       <TouchableOpacity
-        //color="#002855"
-        //title="Mapa del TEC"
-        onPress={() => Alert.alert('Hello')}
+        //onPress={() => Alert.alert('Hello')}
         style={styles.button}
-
       >
         <Text style={styles.buttontext} >Mapa del TEC </Text>
-
       </TouchableOpacity>
       <TouchableOpacity
-        //color="#002855"
-        //title="Informacion de contacto"
-        onPress={() => Alert.alert('Hello')}
+        //onPress={() => Alert.alert('Hello')}
         style={styles.button}
-
       >
         <Text style={styles.buttontext} >Informacion de contacto </Text>
-
       </TouchableOpacity>
 
       <TouchableOpacity
         style={styles.button}
         onPress={() => navigation.navigate("Menu Principal")}
-
-
       >
         <Text style={styles.buttontext} >Menu Institucional </Text>
-
       </TouchableOpacity>
     </View>
+    </ScrollView>
   )
 }
 
 
 function menu_comida() {
   return (
+    <ScrollView>
     <View style={styles.container}>
       <Text style={styles.title}>TEC - Cartago</Text>
       <Text style={styles.title2}>Menu Institucional</Text>
-
-
       <TouchableOpacity
-        //color="#002855"
-        //title="Procesos administrativos"
-        onPress={() => Alert.alert('Hello')}
+        //onPress={() => Alert.alert('Hello')}
         style={styles.button2}
-
       >
-        <Text style={styles.buttontext2} >Mañana -- 8am a 10am {"\n"}Café ₡200   Pinto ₡300 {"\n"}Fresco ₡200   Fruta ₡200 </Text>
-
+        <Text style={styles.buttontext2} >   Mañana -- 8am a 10am {"\n"}   Café ₡200   Pinto ₡300 {"\n"}  Fresco ₡200   Fruta ₡200 </Text>
       </TouchableOpacity>
-
-
       <TouchableOpacity
-        //color="#002855"
-        //title="Procesos administrativos"
-        onPress={() => Alert.alert('Hello')}
+        //onPress={() => Alert.alert('Hello')}
         style={styles.button2}
-
       >
-        <Text style={styles.buttontext2} >Tarde -- 11am a 2pm{"\n"}Sopa azteca ₡800{"\n"}Arroz ₡100 Frijoles ₡200{"\n"}Fresco ₡200 Fruta ₡200</Text>
-
+        <Text style={styles.buttontext2} >   Tarde -- 11am a 2pm{"\n"}       Sopa azteca ₡800{"\n"}Arroz ₡100   Frijoles ₡200{"\n"}Fresco ₡200   Fruta ₡200</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
-        //color="#002855"
-        //title="Mapa del TEC"
-        onPress={() => Alert.alert('Hello')}
+        //onPress={() => Alert.alert('Hello')}
         style={styles.button2}
-
       >
-        <Text style={styles.buttontext2} >Merienda 3pm{"\n"}Café ₡200   Arepa ₡200{"\n"}Fresco ₡200   Fruta ₡200</Text>
-
+        <Text style={styles.buttontext2} >         Merienda 3pm{"\n"}Café ₡200   Arepa ₡200{"\n"}Fresco ₡200   Fruta ₡200</Text>
       </TouchableOpacity>
       <TouchableOpacity
-        //color="#002855"
-        //title="Informacion de contacto"
-        onPress={() => Alert.alert('Hello')}
+        //onPress={() => Alert.alert('Hello')}
         style={styles.button2}
-
       >
-        <Text style={styles.buttontext2} >Noche -- 5pm a 6:30pm{"\n"}Pollo en salsa caribeña ₡800{"\n"}Arroz ₡100  Frijoles ₡200{"\n"}Fresco ₡200  Fruta ₡200</Text>
-
+        <Text style={styles.buttontext2} >      Noche -- 5pm a 6:30pm{"\n"} Pollo en salsa caribeña ₡800{"\n"}    Arroz ₡100  Frijoles ₡200{"\n"}    Fresco ₡200  Fruta ₡200</Text>
       </TouchableOpacity>
     </View>
+    </ScrollView>
   )
 }
 
@@ -214,7 +189,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 80,
-    width:"98%"
+    width: "98%"
   },
 
 
@@ -227,21 +202,22 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,
-    borderWidth:2,
-    padding :10,
-    width:"90%"
+    borderWidth: 2,
+    padding: 10,
+    width: "90%"
   },
 
   buttontext: {
     justifyContent: 'center',
     alignItems: 'center',
     color: "white",
-    fontSize: 30
+    fontSize: 30,
+    //fontFamily: "Nunito_700Bold"
 
 
 
   }
-,
+  ,
 
 
   buttontext2: {
