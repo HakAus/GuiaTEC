@@ -9,8 +9,11 @@ const DrawerNavigator = () => {
   return (
     <NavigationContainer>
       <Navigator initialRouteName="AdminProcessesStack">
-        <Screen name="ContactsStack" component={ContactsStack} />
-        <Screen name="AdminProcessesStack" component={AdminProcessesStack} />
+        <Screen name="Información de contacto" component={ContactsStack} />
+        <Screen
+          name="Procesos Administrativos"
+          component={AdminProcessesStack}
+        />
       </Navigator>
     </NavigationContainer>
   );

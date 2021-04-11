@@ -1,46 +1,48 @@
 import React from "react";
-import {
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  ImageBackground,
-} from "react-native";
+import { StyleSheet, View, Text, ImageBackground } from "react-native";
 import Card from "../components/Card";
 
-export default function AdminProcessesMenu() {
-  const pressHandler = () => {};
+export default function AdminProcessesMenu({ navigation }) {
+  const goToBecas = () => {
+    navigation.navigate("Becas");
+  };
+  const goToInclusion = () => {
+    navigation.navigate("Inclusion");
+  };
+  const goToReconocimiento = () => {
+    navigation.navigate("Reconocimiento");
+  };
 
   return (
     <ImageBackground
       source={require("../assets/white_bg.jpg")}
       style={styles.background}
     >
-      <ScrollView style={styles.scrollView}>
-        <Text style={styles.sectionText}> Procesos administrativos </Text>
-        <Card pressHandler={pressHandler}>
+      <View style={styles.view}>
+        <Text style={styles.sectionText}> Pasos para el proceso de beca </Text>
+        <Card pressHandler={goToBecas} style={styles.redButton}>
           <Text style={styles.cardTitle}>Becas</Text>
         </Card>
-        <Card pressHandler={pressHandler}>
+        <Card pressHandler={goToInclusion} style={styles.redButton}>
           <Text style={styles.cardTitle}>Inclusión</Text>
         </Card>
-        <Card pressHandler={pressHandler}>
+        <Card pressHandler={goToReconocimiento} style={styles.redButton}>
           <Text style={styles.cardTitle}>Reconocimiento de materias</Text>
         </Card>
         <View style={{ width: 200, height: 200 }}></View>
-      </ScrollView>
+      </View>
     </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
-  scrollView: {
+  view: {
     flex: 1,
     backgroundColor: "#fff",
   },
   sectionText: {
     flex: 1,
-    marginTop: "15%",
+    marginTop: "10%",
     marginBottom: "10%",
     marginHorizontal: "5%",
     textAlign: "center",
@@ -58,5 +60,8 @@ const styles = StyleSheet.create({
     height: "100%",
     alignItems: "center",
     justifyContent: "center",
+  },
+  redButton: {
+    backgroundColor: "#ef3340",
   },
 });
