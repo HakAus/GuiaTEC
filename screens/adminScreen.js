@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, View, Text, ImageBackground } from "react-native";
 import TouchableCard from "../components/TouchableCard";
 
+
 export default function AdminProcessesMenu({ navigation }) {
   const goToBecas = () => {
     navigation.navigate("Becas");
