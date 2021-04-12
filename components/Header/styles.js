@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
   },
   icon: {
+    flex: 1,
     color: "#fff",
   },
   headerImage: {

@@ -1,51 +1,51 @@
 import React from "react";
 import {
+  StyleSheet,
   Text,
   View,
-  StyleSheet,
   TouchableOpacity,
   ScrollView,
+  ImageBackground,
 } from "react-native";
 
 export default function HomeScreen({ navigation }) {
   return (
-    <ScrollView>
-      <View style={styles.container}>
-        <Text style={styles.title}>Menu Principal</Text>
+    <ImageBackground
+      source={require("../assets/white_bg.jpg")}
+      style={styles.background}
+    >
+      <ScrollView>
+        <View style={styles.container}>
+          <Text style={styles.title}>Menu Principal</Text>
 
-        <TouchableOpacity
-          onPress={() => navigation.navigate("Procesos Administrativos")}
-          style={styles.button}
-        >
-          <Text style={styles.buttontext}>Procesos administrativos</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => navigation.navigate("Horarios de buses")}
-          style={styles.button}
-        >
-          <Text style={styles.buttontext}>Horario de buses </Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => navigation.navigate("Procesos Administrativos")}
-          style={styles.button}
-        >
-          <Text style={styles.buttontext}>Mapa del TEC </Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => navigation.navigate("Información de contacto")}
-          style={styles.button}
-        >
-          <Text style={styles.buttontext}>Informacion de contacto </Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Procesos Administrativos")}
+            style={styles.button}
+          >
+            <Text style={styles.buttontext}>Procesos administrativos</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Horarios de buses")}
+            style={styles.button}
+          >
+            <Text style={styles.buttontext}>Horario de buses </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Información de contacto")}
+            style={styles.button}
+          >
+            <Text style={styles.buttontext}>Informacion de contacto </Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate("Menú institucional")}
-        >
-          <Text style={styles.buttontext}>Menu Institucional </Text>
-        </TouchableOpacity>
-      </View>
-    </ScrollView>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate("Menú institucional")}
+          >
+            <Text style={styles.buttontext}>Menu Institucional </Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
+    </ImageBackground>
   );
 }
 
@@ -54,7 +54,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#FFFFFF",
   },
   title: { marginTop: 10, fontSize: 35, color: "black" },
   title2: { fontSize: 20, color: "black" },
@@ -89,5 +88,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     color: "white",
     fontSize: 22,
+  },
+  background: {
+    flex: 1,
+    width: "100%",
+    height: "100%",
   },
 });

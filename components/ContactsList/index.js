@@ -6,6 +6,7 @@ import styles from "./styles";
 
 const ContactsList = (props) => {
   const { content, type } = props;
+
   const [contacts, setContacts] = useState([
     {
       type: "Computación",
@@ -101,8 +102,8 @@ const ContactsList = (props) => {
   ]);
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{content}</Text>
       <FlatList
+        style={styles.contactsList}
         keyExtractor={(item) => item.id}
         data={contacts}
         renderItem={({ item }) => <ContactItem contact={item} />}
