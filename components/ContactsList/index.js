@@ -13,10 +13,11 @@ const ContactsList = (props) => {
       <FlatList
         data={contacts.filter((item) => item.type === type)}
         renderItem={({ item }) => <ContactItem contact={item} />}
-        keyExtractor={({ id }) => id}
+        keyExtractor={(item) => item.id}
       />
     </View>
   );
 };
 
 export default ContactsList;
+
