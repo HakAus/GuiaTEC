@@ -3,6 +3,7 @@ import { Image } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Header from "../components/Header";
 import TecCartago from "../screens/Horarios";
+import MenuHorarios from "../screens/MenuHorarios"
 
 const { Navigator, Screen } = createStackNavigator();
 
