@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import ContactsStack from "./contactsStack";
 import AdminProcessesStack from "./adminStack";
+import InstitutionalMenuStack from "./institutionalMenuStack";
 
 const DrawerNavigator = () => {
   const { Navigator, Screen } = createDrawerNavigator();
@@ -14,6 +15,7 @@ const DrawerNavigator = () => {
           name="Procesos Administrativos"
           component={AdminProcessesStack}
         />
+        <Screen name="Menú institucional" component={InstitutionalMenuStack} />
       </Navigator>
     </NavigationContainer>
   );
