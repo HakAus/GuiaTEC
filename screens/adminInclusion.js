@@ -6,12 +6,12 @@ import {
   ImageBackground,
   SectionList,
 } from "react-native";
-import Card from "../components/Card";
+import Card from "../components/Card/index";
 
 export default function AdminInclusion({ navigation, route }) {
   const Item = ({ subtitle, text }) => (
     <Card>
-      <View style={styles.sectionItem}>
+      <View style={styles.sectionItem}>``
         <Text style={styles.cardTitle}>{subtitle}</Text>
         <Text style={styles.text}>{text}</Text>
       </View>

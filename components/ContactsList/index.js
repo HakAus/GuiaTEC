@@ -105,6 +105,7 @@ const ContactsList = (props) => {
         keyExtractor={(item) => item.id}
         data={contacts}
         renderItem={({ item }) => <ContactItem contact={item} />}
+        keyExtractor={(item) => item.id}
       />
     </View>
   );

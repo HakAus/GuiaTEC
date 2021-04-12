@@ -4,6 +4,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import ContactsStack from "./contactsStack";
 import AdminProcessesStack from "./adminStack";
 import InstitutionalMenuStack from "./institutionalMenuStack";
+import ScheduleStack from "./ScheduleStack";
 
 const DrawerNavigator = () => {
   const { Navigator, Screen } = createDrawerNavigator();
@@ -16,6 +17,7 @@ const DrawerNavigator = () => {
           component={AdminProcessesStack}
         />
         <Screen name="Menú institucional" component={InstitutionalMenuStack} />
+        <Screen name="Horarios de buses" component={ScheduleStack} />
       </Navigator>
     </NavigationContainer>
   );
