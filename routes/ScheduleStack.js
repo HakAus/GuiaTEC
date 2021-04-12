@@ -24,6 +24,9 @@ const ScheduleStack = ({ navigation }) => (
       component={MenuHorarios}
       options={{
         headerShown: false,
+        headerTitle: () => (
+          <Header navigation={navigation} title="Menu Horario Buses" />
+        ),
       }}
     />
     <Screen

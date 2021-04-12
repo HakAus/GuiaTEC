@@ -4,18 +4,14 @@ import { MaterialIcons } from "@expo/vector-icons";
 import styles from "./styles";
 
 export default function Header({ navigation, title }) {
-  const openMenu = () => {
-    navigation.openDrawer();
-  };
-
   return (
     <View style={styles.header}>
-      <MaterialIcons
-        name="menu"
+      {/* <MaterialIcons
+        name="home"
         size={28}
         onPress={openMenu}
         style={styles.icon}
-      />
+      /> */}
       <View style={styles.headerTitle}>
         <Image
           source={require("../../assets/hat.png")}

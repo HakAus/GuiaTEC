@@ -23,7 +23,7 @@ const HomeStack = ({ navigation }) => (
       }}
     >
       <Screen
-        name="HomeScreen"
+        name="Menú principal"
         component={HomeScreen}
         options={{
           headerTitle: () => (
