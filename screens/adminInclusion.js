@@ -1,17 +1,17 @@
 import React from "react";
 import {
   StyleSheet,
-  View,
   Text,
+  View,
   ImageBackground,
   SectionList,
 } from "react-native";
-import Card from "../components/Card/index";
+import Card from "../components/Card";
 
-export default function AdminInclusion({ navigation, route }) {
+export default function AdminRecognition({ navigation, route }) {
   const Item = ({ subtitle, text }) => (
     <Card>
-      <View style={styles.sectionItem}>``
+      <View style={styles.sectionItem}>
         <Text style={styles.cardTitle}>{subtitle}</Text>
         <Text style={styles.text}>{text}</Text>
       </View>
