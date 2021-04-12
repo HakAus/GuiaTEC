@@ -24,56 +24,28 @@ const AdminProcessesStack = ({ navigation }) => (
       name="AdminProcessesMenu"
       component={AdminProcessesMenu}
       options={{
-        headerTitle: () => (
-          <Header navigation={navigation} title="Procesos Administrativos" />
-        ),
-        headerBackground: () => (
-          <Image
-            source={require("../assets/blue_bg.png")}
-            style={{ width: "100%", height: "100%" }}
-          />
-        ),
+        headerShown: false,
       }}
     />
     <Screen
       name="Becas"
       component={AdminScholarship}
       options={{
-        headerTitle: () => <Header navigation={navigation} title="Becas" />,
-        headerBackground: () => (
-          <Image
-            source={require("../assets/blue_bg.png")}
-            style={{ width: "100%", height: "100%" }}
-          />
-        ),
+        headerShown: false,
       }}
     />
     <Screen
       name="Inclusion"
       component={AdminInclusion}
       options={{
-        headerTitle: () => <Header navigation={navigation} title="Inclusión" />,
-        headerBackground: () => (
-          <Image
-            source={require("../assets/blue_bg.png")}
-            style={{ width: "100%", height: "100%" }}
-          />
-        ),
+        headerShown: false,
       }}
     />
     <Screen
       name="Reconocimiento"
       component={AdminRecognition}
       options={{
-        headerTitle: () => (
-          <Header navigation={navigation} title="Reconocimiento de materias" />
-        ),
-        headerBackground: () => (
-          <Image
-            source={require("../assets/blue_bg.png")}
-            style={{ width: "100%", height: "100%" }}
-          />
-        ),
+        headerShown: false,
       }}
     />
   </Navigator>

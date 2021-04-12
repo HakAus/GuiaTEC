@@ -21,15 +21,7 @@ const InstitutionalMenuStack = ({ navigation }) => (
       name="InstitutionalMenu"
       component={InstitutionalMenu}
       options={{
-        headerTitle: () => (
-          <Header navigation={navigation} title="Menú institucional" />
-        ),
-        headerBackground: () => (
-          <Image
-            source={require("../assets/blue_bg.png")}
-            style={{ width: "100%", height: "100%" }}
-          />
-        ),
+        headerShown: false,
       }}
     />
   </Navigator>
