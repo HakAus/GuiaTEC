@@ -24,7 +24,7 @@ export default function AdminProcessesMenu({ navigation }) {
           <Text style={styles.cardTitle}>Becas</Text>
         </TouchableCard>
         <TouchableCard pressHandler={goToInclusion} style={styles.redButton}>
-          <Text style={styles.cardTitle}>Inclusión</Text>
+          <Text style={styles.cardTitle}>Exámenes por suficiencia</Text>
         </TouchableCard>
         <TouchableCard
           pressHandler={goToReconocimiento}
@@ -41,7 +41,6 @@ export default function AdminProcessesMenu({ navigation }) {
 const styles = StyleSheet.create({
   view: {
     flex: 1,
-    backgroundColor: "#fff",
   },
   sectionText: {
     flex: 1,

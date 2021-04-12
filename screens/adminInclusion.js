@@ -5,39 +5,81 @@ import {
   View,
   ImageBackground,
   SectionList,
+  Button,
+  Linking,
 } from "react-native";
 import Card from "../components/Card";
 
 export default function AdminRecognition({ navigation, route }) {
-  const Item = ({ subtitle, text }) => (
-    <Card>
-      <View style={styles.sectionItem}>
-        <Text style={styles.cardTitle}>{subtitle}</Text>
-        <Text style={styles.text}>{text}</Text>
-      </View>
-    </Card>
-  );
+  const Item = ({ subtitle, text, links, namesLinks }) => {
+    if (links !== []) {
+      return (
+        <Card>
+          <View style={styles.sectionItem}>
+            <Text style={styles.cardTitle}>{subtitle}</Text>
+            <Text style={styles.text}>{text}</Text>
+            <View>
+              {links.map((item, index) => (
+                <View style={styles.button}>
+                  <Button
+                    title={namesLinks[index]}
+                    onPress={() => Linking.openURL(item)}
+                  />
+                </View>
+              ))}
+            </View>
+          </View>
+        </Card>
+      );
+    } else {
+      return (
+        <Card>
+          <View style={styles.sectionItem}>
+            <Text style={styles.cardTitle}>{subtitle}</Text>
+            <Text style={styles.text}>{text}</Text>
+          </View>
+        </Card>
+      );
+    }
+  };
 
   const DATA = [
     {
       title: "Paso 1",
-      subtitle: "Subtitle",
-      data: ["Some words"],
+      subtitle: "Descripción",
+      data: [
+        `Verificar que la asignatura esté definida como susceptible de ser presentada por suficiencia por la escuela respectiva y esté estipulado así en el programa de estudios correspondientes.`,
+      ],
+      links: [],
+      namesLinks: [],
     },
     {
       title: "Paso 2",
-      subtitle: "Subtitle",
-      data: ["Some words"],
+      subtitle: "Descripción",
+      data: [
+        `Completar el formulario según las fechas establecidas en el Calendario Institucional y Académico.
+
+      Estudiantes de post grados  (Maestrías - Doctorados ) deberán completar  el siguiente formulario`,
+      ],
+      links: [
+        "https://www.tec.ac.cr/calendario-institucional",
+        "https://www.tec.ac.cr/formularios/solicitud-examen-suficiencia",
+        "https://www.tec.ac.cr/formularios/solicitud-examen-suficiencia-post-grados",
+      ],
+      namesLinks: [
+        "Calendario Institucional",
+        "Formulario regular",
+        "Formulario estudiantes de post grado",
+      ],
     },
     {
       title: "Paso 3",
-      subtitle: "Subtitle",
-      data: ["Some words"],
-    },
-    {
-      title: "Paso 4",
-      subtitle: "Subtitle",
-      data: ["Some words"],
+      subtitle: "Descripción",
+      data: [
+        `Cancelar el monto establecido para el examen por suficiencia según las fechas establecidas en el Calendario Institucional y Académico.`,
+      ],
+      links: ["https://www.tec.ac.cr/calendario-institucional"],
+      namesLinks: ["Calendario Institucional"],
     },
   ];
 
@@ -51,7 +93,12 @@ export default function AdminRecognition({ navigation, route }) {
         style={styles.sectionList}
         keyExtractor={(item, index) => item + index}
         renderItem={({ section }) => (
-          <Item subtitle={section.subtitle} text={section.data} />
+          <Item
+            subtitle={section.subtitle}
+            text={section.data}
+            links={section.links}
+            namesLinks={section.namesLinks}
+          />
         )}
         renderSectionHeader={({ section: { title } }) => (
           <Text style={styles.sectionTitle}>{title}</Text>
@@ -94,5 +141,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  cardStyles: {},
+  button: {
+    paddingVertical: 10,
+  },
 });
